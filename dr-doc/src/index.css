@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F5EFDD;
+  --color-cream-dark: #EDE0C4;
+  --color-maroon: #5C1A1B;
+  --color-maroon-light: #7A2020;
+  --color-dark: #2A1414;
+  --color-blush: #E8C4C4;
+  --color-sage: #B7D8A8;
+  --color-white: #FFFFFF;
+  --font-display: "Inter", "Arial Black", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-display); background: var(--color-cream); color: var(--color-dark); }
+}
+
+@layer components {
+  .tag-bracket { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .btn-maroon { background: var(--color-maroon); color: var(--color-cream); padding: 0.5rem 1.5rem; font-weight: 700; border: 2px solid var(--color-dark); cursor: pointer; transition: background 0.2s; }
+  .btn-maroon:hover { background: var(--color-maroon-light); }
+  .btn-outline { background: transparent; color: var(--color-dark); padding: 0.5rem 1.5rem; font-weight: 700; border: 2px solid var(--color-dark); cursor: pointer; }
+  .btn-outline:hover { background: var(--color-dark); color: var(--color-cream); }
+  .card-stamp { border: 2px solid var(--color-dark); background: var(--color-white); box-shadow: 4px 4px 0 var(--color-dark); }
+  .icon-chip { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: var(--color-blush); border-radius: 0.5rem; border: 2px solid var(--color-dark); }
+  .pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; font-family: var(--font-mono); text-transform: uppercase; }
+  .pill-green { background: var(--color-sage); color: var(--color-dark); }
+  .pill-pink { background: var(--color-blush); color: var(--color-maroon); }
+  .pill-dark { background: var(--color-dark); color: var(--color-cream); }
+  .pill-maroon { background: var(--color-maroon); color: var(--color-cream); }
+  .ticker-strip { background: var(--color-maroon); color: var(--color-cream); overflow: hidden; white-space: nowrap; padding: 0.35rem 0; }
+  .ticker-content { display: inline-block; animation: ticker 30s linear infinite; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+}
